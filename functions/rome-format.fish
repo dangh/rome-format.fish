@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 function rome-format
   set -l args $argv
   set -l dir
@@ -37,4 +39,8 @@ function rome-format
   end
 
   command rome format $args
+end
+
+if not status is-interactive
+  rome-format $argv
 end
